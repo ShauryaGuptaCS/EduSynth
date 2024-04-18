@@ -1,0 +1,186 @@
+*{
+  box-sizing: border-box;
+}
+
+/* App page */
+.app{
+  width:100%;
+  height:100%;
+}
+
+/* Olt page */
+.olt{
+  width: 100%;
+  height:100%;
+  display: flex;
+  
+}
+
+/* Sidebar page*/
+.sidebar{
+  background-color: green;
+  width:20%;
+  height:100vh;
+}
+
+/* Exam page*/
+.exam{
+  background-color: blue;
+  width:80%;
+  height:100vh;
+}
+
+/* Home Page */
+.home{
+  width:100%;
+  height:100%;
+}
+.home img{
+  z-index: 1;
+  width:100%;
+  height:100vh;
+}
+.home-section1{
+  width:100%;
+  height:100vh;
+  background-image: url('../../front-end/public/images/home1.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.home-section-inner-1{
+
+  max-width: 75%;
+  font-size:51px;
+  color:white;
+  
+  text-align: center;
+  
+}
+
+.home-section2{
+  
+  width:100%;
+  height: 100vh;
+  padding:30px;
+  display: grid;
+  row-gap:40px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+
+  color:white;
+  background-image: url('../../front-end/public/images/greenishBg.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.home-section2  .div-btn{
+ 
+  border-radius:2.5%;
+  cursor:pointer;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.home-section2  .div-btn p{
+  max-width:75%;
+  font-size: 35px;
+  text-align: center;
+}
+
+
+/* Work In Progress */
+.workInProgress{
+  width:100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.workInProgress h1{
+  font-size: 100px;
+}
+
+
+/* Login Page */
+
+.login {
+  width:100%;
+  height:100vh;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+}
+.login-form {
+   display: flex;
+   flex-direction: column;
+   gap:12px;
+}
+
+.login-form p{
+  font-size: 39px;
+  margin-bottom: 10px;
+}
+
+/* Sign Up page */
+.signup {
+  width:100%;
+  height:100vh;
+  color:white;
+  display: flex;
+  justify-content: center;
+  /* align-items: center;  */
+  
+
+  background-color: black;
+}
+.signup-form {
+   display: flex;
+   flex-direction: column;
+   gap:12px;
+}
+
+.signup-form p{
+  font-size: 39px;
+  margin-bottom: 10px;
+}
+
+
+button{
+  width:100px;
+  height:35px;
+  color:white;
+  background-color: #007bff;
+  /* border-radius: 2.5%; */
+  border:2px solid white;
+}
+
+
+input{
+  width:417px;
+  height:36px;
+  padding:10px;
+}
+
+a{
+  color:white;
+}
+a:hover{
+  color:skyblue;
+}
