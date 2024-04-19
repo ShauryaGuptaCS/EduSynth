@@ -6,12 +6,13 @@ export default function Signup() {
   const [confirmPassword,setConfirmPassword]=useState('');
   const [error,setError]=useState(false);
   const [errorMsg,setErrorMsg]=useState('');
+  const [name,setName]=useState('');
 
   const handleSignUp=async (e)=>{
     e.preventDefault(); 
     console.log(email);
-    if(!email || !password || !confirmPassword){
-      setErrorMsg('Fill email , password and rePassword');
+    if(!email || !password || !confirmPassword || !name){
+      setErrorMsg('Fill email , password , name and rePassword properly');
       setError(true);
       return;
     }
@@ -29,7 +30,7 @@ export default function Signup() {
     setError(false);
     let result=await fetch(`http://localhost:4500/signup`,{
       method:'post',
-      body:JSON.stringify({email,password}),
+      body:JSON.stringify({email,password,name}),
       headers:{
           'Content-Type':'application/json'
       }
@@ -53,6 +54,9 @@ export default function Signup() {
               
               <p>SignUp Page</p>
               {error && <span>{errorMsg}</span>}
+              <label>Name<span>*</span></label>
+              <input type="text" 
+              value={name} onChange={(e)=>{setName(e.target.value)}}/>
               <label>Email<span>*</span></label>
               <input type="text" 
               value={email} onChange={(e)=>{setEmail(e.target.value)}}/>

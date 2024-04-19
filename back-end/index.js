@@ -13,6 +13,7 @@ app.post('/signup',async(req,res)=>{
     try{
         const email=req.body.email;
         const password=req.body.password;
+        const name=req.body.name;
         const data=new User(req.body);
 
         const AnyUser=await User.findOne({email});

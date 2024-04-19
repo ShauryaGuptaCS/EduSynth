@@ -7,6 +7,11 @@ const UserSchema=mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    name:{
+        type:String,
+        required:true
     }
+    
 })
 module.exports=mongoose.model('Users',UserSchema);
