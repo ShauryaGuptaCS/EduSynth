@@ -13,6 +13,14 @@ export default function Home() {
         navigate('/workInProgress');
        }
     }
+    const handleTestBtnClick=()=>{
+       if(!auth){
+        navigate('/login')
+       }
+       else{
+        navigate('/test');
+       }
+    }
   return (
     <div className='home'>
         {/* Section 1 */}
@@ -23,7 +31,7 @@ export default function Home() {
         </section>
         <section className='home-section2'>
             
-            <div className='div-btn' onClick={handleBtnClick}><p>Test</p></div>
+            <div className='div-btn' onClick={handleTestBtnClick}><p>Test</p></div>
             <div className='div-btn' onClick={handleBtnClick}><p>Video Conferencing</p></div>
             <div className='div-btn' onClick={handleBtnClick}><p>Courses</p></div>
             <div className='div-btn' onClick={handleBtnClick}><p>Notes</p></div>

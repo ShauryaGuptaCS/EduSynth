@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './components/Home';
+import Test from './components/Test';
 import Login from './components/Login';
 import Signup from './components/Signup'
 import WorkInProgress from './components/WorkInProgress';
@@ -13,6 +14,8 @@ function App() {
         <Route path="/*" element={<Home/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/signup" element={<Signup/>}></Route>
+        <Route path="/test" element={<Test/>}></Route>
+
       </Routes>
       </BrowserRouter>
       

@@ -35,7 +35,17 @@ export default function Signup() {
       }
   })
   result=await result.json();
-  console.log(result);
+  if(result.email){
+    setEmail('');
+    setConfirmPassword('');
+    setPassword('');
+    alert('Signup Successful');
+  }
+  else{
+    setError(true);
+    setErrorMsg(JSON.stringify(result));
+  }
+  
   }
   return (
     <div className='signup'>
