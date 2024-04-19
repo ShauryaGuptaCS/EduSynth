@@ -3,22 +3,30 @@ import { Link } from 'react-router-dom'
 export default function Signup() {
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
-  const [rePassword,setRePassword]=useState('');
+  const [confirmPassword,setConfirmPassword]=useState('');
+  const [error,setError]=useState(false);
+  const [errorMsg,setErrorMsg]=useState('');
 
   const handleSignUp=async (e)=>{
     e.preventDefault(); 
     console.log(email);
-    if(!email || !password || rePassword){
+    if(!email || !password || !confirmPassword){
+      setErrorMsg('Fill email , password and rePassword');
+      setError(true);
       return;
     }
-    if(password === rePassword){
+    if(!(password === confirmPassword)){
+      setErrorMsg('password and confirm password not matching');
+      setError(true);
       return;
     }
-
-    if(password.length < 8){
+    console.log(password.length);
+    if(password.length !== 8){
+      setErrorMsg('enter password of eight length')
+      setError(true);
       return;
     }
-    
+    setError(false);
     let result=await fetch(`http://localhost:4500/signup`,{
       method:'post',
       body:JSON.stringify({email,password}),
@@ -32,17 +40,18 @@ export default function Signup() {
   return (
     <div className='signup'>
           <form className='signup-form'>
-            
+              
               <p>SignUp Page</p>
-              <label>Email</label>
+              {error && <span>{errorMsg}</span>}
+              <label>Email<span>*</span></label>
               <input type="text" 
               value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-              <label>Password</label>
+              <label>Password<span>*</span></label>
               <input type="password" 
               value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-              <label>Re-enter Password</label>
+              <label>Confirm Password<span>*</span></label>
               <input type="password" 
-              value={rePassword} onChange={(e)=>{setRePassword(e.target.value)}}/>
+              value={confirmPassword} onChange={(e)=>{setConfirmPassword(e.target.value)}}/>
               <div>
               Already Registered?<Link to="/login"> Login</Link>
               </div>
