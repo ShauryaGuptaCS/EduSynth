@@ -40,6 +40,7 @@ export default function Signup() {
     setEmail('');
     setConfirmPassword('');
     setPassword('');
+    setName('');
     alert('Signup Successful');
   }
   else{

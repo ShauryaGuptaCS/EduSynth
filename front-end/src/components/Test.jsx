@@ -11,9 +11,19 @@ export default function Test() {
         navigate('/login');
     }
 },[navigate]);
+  const handleGenerateBtn=()=>{
+    navigate('/generateTest')
+  }
   return (
-    <div>
-      <h1>Test Page</h1>
+    <div className='test'>
+      <section className="test-section-a">
+        <button className="test-section-a-btn" onClick={handleGenerateBtn}><p>Generate test</p></button>
+        <div className="test-section-a-content">
+          <h1>Generate Test</h1>
+          <p>User can generate their own test</p>
+        </div>
+      </section>
+      
     </div>
   )
 }

@@ -180,11 +180,49 @@
   gap:23px;
 }
 
-.nav-heading{
-  
+/* test page */
+.test-section-a{
+  background-color: #EFEFEF;
+  width:100vw;
+  height:50vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  padding:25px;
 }
 
-button{
+.test-section-a-btn{
+  background-color:  #FAFAFA;
+  border-radius: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:black;
+  font-size: 25px;
+  border:none;
+  cursor:pointer;
+}
+.test-section-a-btn:hover{
+  /* background-color:skyblue; */
+  border-radius: 50%;
+}
+.test-section-a-content{
+  /* color:white; */
+  padding:15px;
+  text-align: center;
+}
+.test-section-a h1{
+  font-size:45px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+
+
+
+
+.login button , .signup button{
   width:100px;
   height:35px;
   color:white;
